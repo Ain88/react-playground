@@ -1,16 +1,16 @@
+import React from "react";
 import { withRouter } from "./withRouter";
-import { Typography } from "@material-ui/core";
 
 import { useStyles } from "./styles";
-import Home from "./page/Home";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
 
 export const Body = withRouter((props) => {
   const classes = useStyles();
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
-      <p>{props?.label}</p>
-      <Home />
+      <p>{props.Component}</p>
     </main>
   );
 });

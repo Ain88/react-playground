@@ -14,9 +14,13 @@ import { MenuSettings } from "./MenuSettings";
 import { NavBarTop } from "./NavBarTop";
 import { useStyles } from "./styles";
 import { Screen } from "./Screen";
+import { Body } from "./Body";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
 
 const MenuBurguer = ({ theme, onDrawerClose }) => {
   const classes = useStyles();
+
   return (
     <div className={classes.toolbar}>
       <IconButton onClick={onDrawerClose}>
@@ -63,10 +67,10 @@ export default function App() {
           <MenuSettings />
         </Drawer>
         <Routes>
-          <Route exact path="/" element={<Screen />}></Route>
+          <Route exact path="/" element={<Home />}></Route>
           {routes.map((item) => {
             return (
-              <Route path={item.path} key={JSON.stringify(item)} element={<Screen label={item.title.toUpperCase()}/>}></Route>
+              <Route path={item.path} key={JSON.stringify(item)} element={<item.Component />}></Route>
             );
           })}
         </Routes>

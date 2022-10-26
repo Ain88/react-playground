@@ -1,8 +1,8 @@
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+
 export const routes = [
-    { path: "/users", title: "users" },
-    { path: "/groups", title: "groups" },
-    { path: "/roles", title: "roles" },
-    { path: "/permissions-shemas", title: "Permissions Shemas" },
-    { path: "/properties", title: "Properties" }
+    { path: "/home", title: "Home", Component: Home },
+    { path: "/about", title: "About", Component: About }
   ];
   
