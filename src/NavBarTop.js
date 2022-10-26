@@ -27,7 +27,7 @@ export const NavBarTop = ({ open, onDrawerOpen }) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Mini variant drawer
+          React Playground
         </Typography>
       </Toolbar>
     </AppBar>
