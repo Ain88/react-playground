@@ -7,19 +7,19 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { routes } from "./routes";
 
 import { MenuSettings } from "./MenuSettings";
-import { NavBarTop } from "./NavBarTop";
 import { useStyles } from "./styles";
 import { Screen } from "./Screen";
 import { Body } from "./Body";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 
-const MenuBurguer = ({ theme, onDrawerClose }) => {
+const MenuBurguer = ({ onDrawerClose }) => {
   const classes = useStyles();
 
   return (
@@ -31,24 +31,63 @@ const MenuBurguer = ({ theme, onDrawerClose }) => {
   );
 };
 
+const NavBarTop = ({ open, onDrawerOpen }) => {
+  const classes = useStyles();
+  return (
+    <AppBar
+      position="fixed"
+      className={clsx(classes.appBar, {
+        [classes.appBarShift]: open
+      })}
+    >
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={onDrawerOpen}
+          edge="start"
+          className={clsx(classes.menuButton, {
+            [classes.hide]: open
+          })}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" noWrap>
+          React Playground
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+
 export default function App() {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  let menuIcon;
 
   const handleDrawerOpen = () => {
     setOpen(true);
+    console.log("drawer open!")
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+    console.log("drawer closed!")
   };
+
+  if (!open) {
+    menuIcon = <NavBarTop onDrawerOpen={handleDrawerOpen} />;
+  } else {
+    menuIcon = <MenuBurguer onDrawerClose={handleDrawerClose} />
+  }
 
   return (
     <Router>
       <div className={classes.root}>
         <CssBaseline />
-        <NavBarTop onDrawerOpen={handleDrawerOpen} open={open} />
+        {menuIcon}
         <Drawer
           variant="permanent"
           className={clsx(classes.drawer, {
@@ -63,7 +102,6 @@ export default function App() {
           }}
         >
           <MenuBurguer theme={theme} onDrawerClose={handleDrawerClose} />
-
           <Divider />
           <MenuSettings />
         </Drawer>
