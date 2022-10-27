@@ -14,10 +14,8 @@ import { routes } from "./routes";
 
 import { MenuSettings } from "./MenuSettings";
 import { useStyles } from "./styles";
-import { Screen } from "./Screen";
 import { Body } from "./Body";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
 
 const MenuBurguer = ({ onDrawerClose }) => {
   const classes = useStyles();
@@ -109,7 +107,8 @@ export default function App() {
           <Route exact path="/" element={<Home />}></Route>
           {routes.map((item) => {
             return (
-              <Route path={item.path} key={JSON.stringify(item)} element={<item.Component />}></Route>
+              // <Route path={item.path} key={JSON.stringify(item)} element={<item.Component />}></Route>
+              <Route path={item.path} key={JSON.stringify(item)} element={<Body label={item.Component}/>}></Route>
             );
           })}
         </Routes>

@@ -1,8 +1,10 @@
 import { Home } from './pages/Home';
-import { About } from './pages/About';
+import { Reference } from './pages/Reference';
+import { MemeGenerator } from './pages/MemeGenerator';
 
 export const routes = [
     { path: "/home", title: "Home", Component: Home },
-    { path: "/about", title: "About", Component: About }
+    { path: "/reference", title: "Reference", Component: Reference },
+    { path: "/memeGenerator", title: "MemeGenerator", Component: MemeGenerator }
   ];
   
