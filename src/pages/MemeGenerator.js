@@ -43,7 +43,7 @@ export class MemeGenerator extends React.Component {
   
     render() {
       return (
-        <div>
+        <div className="meme-frame">
           <form className="meme-form" onSubmit={this.handleSubmit}>
             <input
               placeholder="Enter Text"

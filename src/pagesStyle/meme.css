@@ -1,3 +1,8 @@
+.meme-frame {
+  position: absolute;
+  width: 30vw;
+}
+
 .meme {
     position: relative;
     width: 90%;
