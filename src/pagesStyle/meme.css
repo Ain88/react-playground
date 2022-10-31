@@ -32,11 +32,12 @@
   }
   
   .meme > .bottom {
-    bottom: 0;
+    top: 200px;
+    /* bottom: 0; */
   }
   
   .meme > .top {
-    top: 0;
+    top: 100px;
   }
   
   .meme-form {

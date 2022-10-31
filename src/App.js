@@ -26,7 +26,7 @@ export default function App() {
         >
           <Toolbar>
             <Typography variant="h6" noWrap component="div">
-              Permanent drawer
+              React Playground
             </Typography>
           </Toolbar>
         </AppBar>
