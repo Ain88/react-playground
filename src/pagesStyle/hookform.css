@@ -1,0 +1,20 @@
+#hookform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #hookform input {
+    width: 280px;
+    height: 50px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+  }
+  
+  #hookform input[type="submit"] {
+    background-color: #ec5990;
+    color: #fff;
+  }
+  

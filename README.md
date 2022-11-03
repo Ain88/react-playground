@@ -1,1 +1,1 @@
-##Deployed to firebase https://react-playground-141e2.web.app
+##Deployed using firebase :fire: https://react-playground-141e2.web.app
